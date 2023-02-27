@@ -27,7 +27,7 @@ jobs:
           #- 2020.3.23f1
           - 2020.3.45f1
           #- 2022.2.7f1 #не  роб android
-          - 2021.3.19f1 #не правильно отображает небо
+          #- 2021.3.19f1 #не правильно отображает небо
           #- 2019.4.40f1 #не  роб всё
           # - 2021.3.15f1
           # - 2021.3.14f1
@@ -149,10 +149,10 @@ jobs:
           unityVersion: ${{ matrix.unityVersion }}
           buildName: ${{ matrix.projectName }}
           targetPlatform: ${{ matrix.targetPlatform }}
-          buildMethod: UnityBuilderAction.BuildScript.Build
+          #buildMethod: UnityBuilderAction.BuildScript.Build
           #customParameters: -profile SomeProfile -someBoolean -someValue exampleValue
           #cloudRunnerCluster: ${{ matrix.cloudRunnerCluster }}
-          allowDirtyBuild: true
+          #allowDirtyBuild: true
 
       ###########################
       #          Upload         #
@@ -165,7 +165,7 @@ jobs:
           
       - uses: Difegue/action-megacmd@master
         with:
-          args: put -c build/${{ matrix.targetPlatform }} /Unity_projects/${{ matrix.projectName }}/3/${{ matrix.projectName }}_${{ matrix.unityVersion }}_${{ matrix.targetPlatform }}/
+          args: put -c build/${{ matrix.targetPlatform }} /Unity_projects/${{ matrix.projectName }}/4/${{ matrix.projectName }}_${{ matrix.unityVersion }}_${{ matrix.targetPlatform }}/
         env:
           USERNAME: ${{ secrets.MEGA_USERNAME }}
           PASSWORD: ${{ secrets.MEGA_PASSWORD }}
