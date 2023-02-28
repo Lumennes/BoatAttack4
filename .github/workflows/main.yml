@@ -25,8 +25,8 @@ jobs:
         unityVersion:          
           #- 2020.3.23f1
           - 2020.3.45f1
-          #- 2022.2.7f1 #не  роб android
-          #- 2021.3.19f1 #не правильно отображает небо
+          - 2022.2.8f1 #не  роб android
+          - 2021.3.19f1 #не правильно отображает небо
           #- 2019.4.40f1 #не  роб всё
           # - 2021.3.15f1
           # - 2021.3.14f1
@@ -164,7 +164,7 @@ jobs:
           
       - uses: Difegue/action-megacmd@master
         with:
-          args: put -c build/${{ matrix.targetPlatform }} /Unity_projects/${{ matrix.projectName }}/7/${{ matrix.projectName }}_${{ matrix.unityVersion }}_${{ matrix.targetPlatform }}/
+          args: put -c build/${{ matrix.targetPlatform }} /Unity_projects/${{ matrix.projectName }}/8/${{ matrix.projectName }}_${{ matrix.unityVersion }}_${{ matrix.targetPlatform }}/
         env:
           USERNAME: ${{ secrets.MEGA_USERNAME }}
           PASSWORD: ${{ secrets.MEGA_PASSWORD }}
