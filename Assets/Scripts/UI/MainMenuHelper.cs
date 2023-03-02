@@ -61,6 +61,12 @@ namespace BoatAttack.UI
             SetupDefaults();
         }
 
+        public void SetupBenchmarkGame()
+        {
+            RaceManager.SetGameType(RaceManager.GameType.Benchmark);
+            SetupDefaults();
+        }
+
         private static void SetLevel(int index) => RaceManager.SetLevel(index);
 
         private static void SetLaps(int index) => RaceManager.RaceData.laps = ConstantData.Laps[index];
